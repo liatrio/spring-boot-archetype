@@ -5,18 +5,15 @@
 
     <requiredProperties>
         <requiredProperty key="applicationDescription"></requiredProperty>
-        <requiredProperty key="mnemonic"></requiredProperty>
         <requiredProperty key="version">
             <defaultValue>0.1.0-SNAPSHOT</defaultValue>
         </requiredProperty>
         <requiredProperty key="groupId"></requiredProperty>
         <requiredProperty key="hipchat-room">
-            <defaultValue>Team ${mnemonic}</defaultValue>
         </requiredProperty>
         <requiredProperty key="filteredArtifactId">
             <defaultValue>${artifactId.replaceAll("-","")}</defaultValue>
         </requiredProperty>
-        <requiredProperty key="devHostName"></requiredProperty>
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
