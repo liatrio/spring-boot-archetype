@@ -1,0 +1,50 @@
+<archetype-descriptor name="spring-mvc-quickstart"
+                      xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd">
+
+    <requiredProperties>
+        <requiredProperty key="applicationDescription"></requiredProperty>
+        <requiredProperty key="mnemonic"></requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>0.1.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupId"></requiredProperty>
+        <requiredProperty key="hipchat-room">
+            <defaultValue>Team ${mnemonic}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="filteredArtifactId">
+            <defaultValue>${artifactId.replaceAll("-","")}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="devHostName"></requiredProperty>
+    </requiredProperties>
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>.gitignore</include>
+                <include>Jenkinsfile</include>
+                <include>sonar-project.properties</include>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/test/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/test/resources</directory>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>

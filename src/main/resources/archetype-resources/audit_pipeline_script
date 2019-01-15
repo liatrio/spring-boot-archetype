@@ -1,0 +1,30 @@
+# audit pipeline
+
+plugins
+# output console,text_file
+# output
+# output config text_file
+# set output_file output-w3af.txt
+# set verbose False
+# back
+# output config console
+# set verbose False
+# back
+
+# blind_sqli 
+crawl web_spider
+crawl
+
+audit all
+audit
+grep Enable all
+grep 
+back
+
+target
+set target APP_URL
+back
+
+start
+
+exit
