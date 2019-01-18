@@ -9,8 +9,8 @@ pipeline {
             }
         }
         steps {
-            configFileProvider([configFile(fileId: 's3', variable: 'MAVEN_SETTINGS')]) {
-                sh "mvn clean deploy -B -s $MAVEN_SETTINGS "
+            withCredentials([usernamePassword(credentialsId: 'Artifactory', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                sh "mvn clean deploy -B -DartifactoryUsername=$USERNAME -DartifactoryPassword=$PASSWORD"
             }
         }
       }
