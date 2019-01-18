@@ -22,6 +22,29 @@
           <addDefaultExcludes>false</addDefaultExcludes>
         </configuration>
       </plugin>
+      <plugin>
+           <groupId>org.jfrog.buildinfo</groupId>
+           <artifactId>artifactory-maven-plugin</artifactId>
+           <version>2.6.1</version>
+           <inherited>false</inherited>
+           <executions>
+               <execution>
+                   <id>build-info</id>
+                   <goals>
+                       <goal>publish</goal>
+                   </goals>
+                   <configuration>
+                       <publisher>
+                           <contextUrl>https://artifactory.liatr.io/artifactory</contextUrl>
+                           <repoKey>releases</repoKey>
+                           <snapshotRepoKey>snapshots</snapshotRepoKey>
+                           <username>${artifactoryUsername}</username>
+                           <password>${artifactoryPassword}</password>
+                       </publisher>
+                   </configuration>
+               </execution>
+           </executions>
+       </plugin>
     </plugins>
     <extensions>
       <extension>
@@ -46,29 +69,6 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
-        <plugin>
-             <groupId>org.jfrog.buildinfo</groupId>
-             <artifactId>artifactory-maven-plugin</artifactId>
-             <version>2.6.1</version>
-             <inherited>false</inherited>
-             <executions>
-                 <execution>
-                     <id>build-info</id>
-                     <goals>
-                         <goal>publish</goal>
-                     </goals>
-                     <configuration>
-                         <publisher>
-                             <contextUrl>https://artifactory.liatr.io/artifactory</contextUrl>
-                             <repoKey>releases</repoKey>
-                             <snapshotRepoKey>snapshots</snapshotRepoKey>
-                             <username>${artifactoryUsername}</username>
-                             <password>${artifactoryPassword}</password>
-                         </publisher>
-                     </configuration>
-                 </execution>
-             </executions>
-         </plugin>
       </plugins>
     </pluginManagement>
   </build>
