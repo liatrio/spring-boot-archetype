@@ -11,6 +11,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <artifactrepo.url>artifacts.liatr.io</artifactrepo.url>
   </properties>
+  <pluginRepositories>
+      <pluginRepository>
+          <id>central</id>
+          <url>http://artifactory.liatr.io/artifactory/virtual-central/</url>
+      </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
